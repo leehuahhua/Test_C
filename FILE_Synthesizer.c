@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+void main()
+{
+    FILE *File1,*File2,*File3;
+    char ch,File1Name[20],File2Name[20],File3Name[20];
+    printf("File1+File2=Files3\n");
+    printf("please input File1Name:\n");
+    scanf("%s",File1Name);
+    printf("please input File2Name:\n");
+    scanf("%s",File2Name);// gets(File2Name);
+    printf("please input File3Name:\n");
+    scanf("%s",File3Name);// gets(File3Name);
+    File1=fopen(File1Name,"rb");
+    File2=fopen(File2Name,"rb");
+    File3=fopen(File3Name,"ab+");
+    while(!(feof(File1)))//feof是检测流上的文件结束符，未结束返回0，结束返回非0值
+    {
+        ch=fgetc(File1);//读出字符存入ch
+        fputc(ch,File3); 
+    }
+    fclose(File1);
+    while(!(feof(File2)))
+    {
+        ch=fgetc(File2);//读出字符存入ch
+        fputc(ch,File3); 
+    }
+    fclose(File2);
+    fclose(File3);
+    system("pause");
+}
