@@ -78,3 +78,17 @@ void main()
 */
 
 
+//常用typedef来创建结构体类型
+/* 结构体命名类型名 */
+
+typedef struct tagBillQuery_T       //typedef (struct tagBillQuery_T) BillQuery_T;
+
+{
+
+...
+
+}BillQuery_T;
+
+/* 结构体变量定义 */
+
+BillQuery_T tBillQuery;
