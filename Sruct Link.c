@@ -7,7 +7,7 @@ struct node
 };
 
 
-typedef struct node NODETYPE;//typedef (struct node) NODETYPE;
+typedef struct node NODETYPE;//typedef (struct node{}) NODETYPE;
 /*
 typedef struct node
 {
